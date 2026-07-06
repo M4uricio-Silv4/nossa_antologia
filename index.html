@@ -4,708 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nossa Antologia</title>
-    <!-- Ícone da aba do navegador -->
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤍</text></svg>">
-
-    <!-- Meta Tags para ficar lindo quando mandar no WhatsApp -->
-    <meta property="og:title" content="Nossa Antologia">
-    <meta property="og:description" content="Um lugar pequeno para guardar o que não cabe em mensagem.">
-    <!-- Coloque o nome de uma foto bem bonita de vocês que esteja na pasta img -->
-    <meta property="og:image" content="https://seusite.github.io/assets/img/foto-preview.jpg">
-    <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
         rel="stylesheet">
-    <style>
-        :root {
-            --ink: #251f24;
-            --muted: #70656e;
-            --paper: #fff9f4;
-            --soft: #f7eadf;
-            --line: rgba(37, 31, 36, 0.12);
-            --rose: #b85f72;
-            --wine: #722f45;
-            --gold: #b88942;
-            --green: #4f7b63;
-            --night: #161217;
-            --shadow: 0 18px 50px rgba(65, 35, 45, 0.16);
-            --serif: "Cormorant Garamond", Georgia, serif;
-            --sans: "Inter", system-ui, sans-serif;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            color: var(--ink);
-            background:
-                linear-gradient(180deg, rgba(255, 249, 244, 0.96), rgba(255, 249, 244, 0.92)),
-                url("https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=1800&q=85");
-            background-attachment: fixed;
-            background-size: cover;
-            font-family: var(--sans);
-            overflow-x: hidden;
-        }
-
-        body.is-night {
-            --ink: #f6edf2;
-            --muted: #cdbec8;
-            --paper: #181318;
-            --soft: #241a22;
-            --line: rgba(255, 255, 255, 0.14);
-            --rose: #e7a0ae;
-            --wine: #ffc1cd;
-            --gold: #d8ad66;
-            --green: #8ab79d;
-            --shadow: 0 18px 55px rgba(0, 0, 0, 0.32);
-            background:
-                linear-gradient(180deg, rgba(22, 18, 23, 0.9), rgba(22, 18, 23, 0.96)),
-                url("https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=1800&q=85");
-            background-attachment: fixed;
-            background-size: cover;
-        }
-
-        button,
-        input {
-            font: inherit;
-        }
-
-        button {
-            cursor: pointer;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .shell {
-            min-height: 100vh;
-        }
-
-        .hero {
-            min-height: 92vh;
-            display: grid;
-            grid-template-columns: minmax(0, 1.04fr) minmax(300px, 0.82fr);
-            gap: clamp(28px, 5vw, 72px);
-            align-items: center;
-            width: min(1160px, calc(100% - 40px));
-            margin: 0 auto;
-            padding: 42px 0 28px;
-        }
-
-        .eyebrow {
-            margin: 0 0 14px;
-            color: var(--green);
-            font-size: 0.78rem;
-            font-weight: 700;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-        }
-
-        h1,
-        h2,
-        h3 {
-            font-family: var(--serif);
-            font-weight: 600;
-            line-height: 0.98;
-            margin: 0;
-        }
-
-        h1 {
-            color: var(--wine);
-            font-size: clamp(3.5rem, 12vw, 8.8rem);
-            max-width: 780px;
-        }
-
-        .lead {
-            max-width: 620px;
-            margin: 24px 0 0;
-            color: var(--muted);
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            line-height: 1.8;
-        }
-
-        .actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 30px;
-        }
-
-        .btn {
-            min-height: 46px;
-            border: 1px solid var(--line);
-            border-radius: 999px;
-            padding: 0 18px;
-            color: var(--ink);
-            background: rgba(255, 255, 255, 0.58);
-            backdrop-filter: blur(14px);
-            box-shadow: 0 10px 28px rgba(80, 45, 58, 0.11);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 9px;
-            font-weight: 700;
-            transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
-        }
-
-        body.is-night .btn {
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            border-color: rgba(184, 95, 114, 0.42);
-        }
-
-        .btn.primary {
-            background: var(--wine);
-            color: white;
-            border-color: transparent;
-        }
-
-        .hero-photo {
-            position: relative;
-            min-height: 540px;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            background: #2c2329;
-            isolation: isolate;
-        }
-
-        .hero-photo img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: saturate(0.96) contrast(1.02);
-        }
-
-        .hero-photo::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.72));
-            z-index: 1;
-        }
-
-        .photo-caption {
-            position: absolute;
-            left: 24px;
-            right: 24px;
-            bottom: 22px;
-            z-index: 2;
-            color: white;
-        }
-
-        .photo-caption strong {
-            display: block;
-            font-family: var(--serif);
-            font-size: 2rem;
-            line-height: 1;
-        }
-
-        .photo-caption span {
-            display: block;
-            margin-top: 8px;
-            color: rgba(255, 255, 255, 0.78);
-            line-height: 1.55;
-        }
-
-        .nav {
-            position: sticky;
-            top: 12px;
-            z-index: 30;
-            display: flex;
-            width: min(760px, calc(100% - 30px));
-            margin: -22px auto 0;
-            padding: 7px;
-            gap: 6px;
-            border: 1px solid var(--line);
-            border-radius: 999px;
-            background: rgba(255, 249, 244, 0.76);
-            backdrop-filter: blur(18px);
-            box-shadow: 0 18px 40px rgba(50, 30, 38, 0.12);
-            scrollbar-width: none;
-        }
-
-        .nav::-webkit-scrollbar {
-            display: none;
-        }
-
-        body.is-night .nav {
-            background: rgba(22, 18, 23, 0.72);
-        }
-
-        .nav a,
-        .nav button {
-            flex: 1;
-            min-width: 0;
-            min-height: 38px;
-            border: 0;
-            border-radius: 999px;
-            background: transparent;
-            color: var(--muted);
-            display: grid;
-            place-items: center;
-            font-size: 0.83rem;
-            font-weight: 700;
-            white-space: nowrap;
-        }
-
-        .nav a:hover,
-        .nav button:hover {
-            background: rgba(184, 95, 114, 0.12);
-            color: var(--ink);
-        }
-
-        section {
-            width: min(1040px, calc(100% - 40px));
-            margin: 0 auto;
-            padding: 78px 0;
-        }
-
-        .section-title {
-            display: grid;
-            gap: 10px;
-            margin-bottom: 26px;
-        }
-
-        .section-title h2 {
-            color: var(--wine);
-            font-size: clamp(2.35rem, 7vw, 5rem);
-        }
-
-        .section-title p {
-            max-width: 620px;
-            margin: 0;
-            color: var(--muted);
-            line-height: 1.75;
-        }
-
-        .timer {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-        }
-
-        .time-box,
-        .panel,
-        .letter,
-        .memory {
-            border: 1px solid var(--line);
-            background: rgba(255, 255, 255, 0.62);
-            backdrop-filter: blur(16px);
-            box-shadow: var(--shadow);
-        }
-
-        body.is-night .time-box,
-        body.is-night .panel,
-        body.is-night .letter,
-        body.is-night .memory {
-            background: rgba(255, 255, 255, 0.07);
-        }
-
-        .time-box {
-            min-height: 132px;
-            border-radius: 18px;
-            padding: 20px;
-            display: grid;
-            align-content: center;
-            gap: 8px;
-        }
-
-        .time-box b {
-            color: var(--wine);
-            font-family: var(--serif);
-            font-size: clamp(2.5rem, 7vw, 4.2rem);
-            line-height: 0.9;
-            font-weight: 600;
-        }
-
-        .time-box span {
-            color: var(--muted);
-            font-size: 0.72rem;
-            font-weight: 800;
-            letter-spacing: 0.13em;
-            text-transform: uppercase;
-        }
-
-        .panel {
-            border-radius: 22px;
-            padding: clamp(22px, 4vw, 34px);
-        }
-
-        .reason-panel {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 20px;
-            align-items: center;
-            margin-top: 14px;
-        }
-
-        .reason-text {
-            min-height: 74px;
-            display: flex;
-            align-items: center;
-            margin: 0;
-            color: var(--wine);
-            font-family: var(--serif);
-            font-size: clamp(1.45rem, 4vw, 2.15rem);
-            font-style: italic;
-            line-height: 1.25;
-        }
-
-        .letters {
-            display: grid;
-            gap: 14px;
-        }
-
-        .letter {
-            border-radius: 18px;
-            overflow: hidden;
-        }
-
-        .letter button {
-            width: 100%;
-            min-height: 72px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 18px;
-            padding: 0 22px;
-            border: 0;
-            background: transparent;
-            color: var(--ink);
-            text-align: left;
-            font-weight: 800;
-        }
-
-        .letter button span {
-            color: var(--rose);
-            font-size: 1.35rem;
-        }
-
-        .letter-body {
-            max-height: 0;
-            overflow: hidden;
-            color: var(--muted);
-            line-height: 1.8;
-            transition: max-height 320ms ease, padding 320ms ease;
-        }
-
-        .letter.open .letter-body {
-            max-height: 420px;
-            padding: 0 22px 24px;
-        }
-
-        .letter.locked .letter-body {
-            color: var(--gold);
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
-        }
-
-        .memory {
-            position: relative;
-            min-height: 390px;
-            border-radius: 20px;
-            overflow: hidden;
-            background: #20171d;
-        }
-
-        .memory.large {
-            grid-row: span 2;
-            min-height: 798px;
-        }
-
-        .memory img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 500ms ease;
-        }
-
-        .memory:hover img {
-            transform: scale(1.035);
-        }
-
-        .memory::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.76));
-        }
-
-        .memory div {
-            position: absolute;
-            left: 20px;
-            right: 20px;
-            bottom: 18px;
-            z-index: 2;
-            color: white;
-        }
-
-        .memory strong {
-            display: block;
-            font-family: var(--serif);
-            font-size: 1.85rem;
-            line-height: 1;
-        }
-
-        .memory span {
-            display: block;
-            margin-top: 8px;
-            color: rgba(255, 255, 255, 0.76);
-            line-height: 1.55;
-        }
-
-        .poem {
-            color: var(--wine);
-            font-family: var(--serif);
-            font-size: clamp(1.65rem, 5vw, 3rem);
-            font-style: italic;
-            line-height: 1.28;
-            margin: 0;
-        }
-
-        .poem small {
-            display: block;
-            margin-top: 20px;
-            color: var(--muted);
-            font-family: var(--sans);
-            font-size: 0.92rem;
-            font-style: normal;
-            line-height: 1.7;
-        }
-
-        .capsule {
-            display: grid;
-            grid-template-columns: 0.82fr 1.18fr;
-            gap: 18px;
-            align-items: stretch;
-        }
-
-        .capsule-mark {
-            min-height: 290px;
-            border-radius: 20px;
-            background:
-                linear-gradient(160deg, rgba(114, 47, 69, 0.92), rgba(79, 123, 99, 0.86)),
-                url("https://images.unsplash.com/photo-1492176273113-2d51f47b23b0?auto=format&fit=crop&w=1200&q=85");
-            background-size: cover;
-            background-position: center;
-            box-shadow: var(--shadow);
-            display: grid;
-            align-content: end;
-            padding: 24px;
-            color: white;
-        }
-
-        .capsule-mark strong {
-            font-family: var(--serif);
-            font-size: 2.6rem;
-            line-height: 0.96;
-        }
-
-        .capsule-state {
-            color: var(--muted);
-            line-height: 1.8;
-        }
-
-        .capsule-count {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 18px;
-        }
-
-        .pill {
-            border: 1px solid var(--line);
-            border-radius: 999px;
-            padding: 9px 13px;
-            color: var(--wine);
-            background: rgba(255, 255, 255, 0.45);
-            font-weight: 800;
-        }
-
-        body.is-night .pill {
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .finale {
-            padding-bottom: 42px;
-            text-align: center;
-        }
-
-        .signature {
-            color: var(--wine);
-            font-family: var(--serif);
-            font-size: clamp(2.4rem, 8vw, 5.8rem);
-            line-height: 0.95;
-            margin: 0;
-        }
-
-        .toast {
-            position: fixed;
-            left: 50%;
-            bottom: 22px;
-            z-index: 80;
-            transform: translate(-50%, 18px);
-            opacity: 0;
-            pointer-events: none;
-            width: min(420px, calc(100% - 28px));
-            border: 1px solid var(--line);
-            border-radius: 18px;
-            padding: 16px 18px;
-            color: var(--ink);
-            background: rgba(255, 249, 244, 0.88);
-            box-shadow: var(--shadow);
-            backdrop-filter: blur(18px);
-            transition: opacity 220ms ease, transform 220ms ease;
-            text-align: center;
-            font-weight: 700;
-        }
-
-        body.is-night .toast {
-            background: rgba(22, 18, 23, 0.88);
-        }
-
-        .toast.show {
-            opacity: 1;
-            transform: translate(-50%, 0);
-        }
-
-        .petal {
-            position: fixed;
-            z-index: 75;
-            top: -30px;
-            width: 12px;
-            height: 18px;
-            border-radius: 60% 40% 60% 40%;
-            background: var(--rose);
-            opacity: 0.75;
-            pointer-events: none;
-            animation: fall 3.6s linear forwards;
-        }
-
-        @keyframes fall {
-            to {
-                transform: translate3d(var(--drift), calc(100vh + 60px), 0) rotate(260deg);
-                opacity: 0;
-            }
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(22px);
-            transition: opacity 520ms ease, transform 520ms ease;
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @media (max-width: 820px) {
-            .hero {
-                grid-template-columns: 1fr;
-                min-height: auto;
-                padding: 34px 0 20px;
-            }
-
-            .hero-photo {
-                min-height: min(118vw, 560px);
-            }
-
-            .nav {
-                overflow-x: auto;
-                justify-content: flex-start;
-                border-radius: 18px;
-            }
-
-            .nav a,
-            .nav button {
-                flex: 0 0 auto;
-                padding: 0 13px;
-            }
-
-            section {
-                padding: 58px 0;
-            }
-
-            .timer {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .reason-panel,
-            .capsule,
-            .gallery {
-                grid-template-columns: 1fr;
-            }
-
-            .memory,
-            .memory.large {
-                min-height: 430px;
-            }
-        }
-
-        @media (max-width: 520px) {
-
-            .hero,
-            section {
-                width: min(100% - 28px, 1040px);
-            }
-
-            h1 {
-                font-size: clamp(3.15rem, 18vw, 5.8rem);
-            }
-
-            .actions {
-                display: grid;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .time-box {
-                min-height: 112px;
-                padding: 16px;
-            }
-
-            .letter button {
-                min-height: 66px;
-                padding: 0 18px;
-            }
-
-            .letter.open .letter-body {
-                padding: 0 18px 20px;
-            }
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 80px;
-            /* Garante que o menu não cubra o título ao rolar */
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
@@ -726,7 +30,8 @@
             </div>
 
             <figure class="hero-photo" aria-label="Foto principal do casal">
-                <img src="assets/img/última vez.jpeg" alt="Casal em um momento delicado">
+                <img src="assets/img/imagem 8.jpeg"
+                    alt="Casal em um momento delicado">
                 <figcaption class="photo-caption">
                     <strong>Mauricio e Keliane</strong>
                     <span>Troque esta imagem por uma foto de vocês e a página vira dela de verdade.</span>
@@ -751,14 +56,14 @@
                     data que seja só de vocês.</p>
             </div>
             <div class="timer" aria-live="polite">
-                <div class="time-box"><b id="days">260</b><span>dias</span></div>
-                <div class="time-box"><b id="hours">20</b><span>horas</span></div>
-                <div class="time-box"><b id="minutes">45</b><span>minutos</span></div>
-                <div class="time-box"><b id="seconds">59</b><span>segundos</span></div>
+                <div class="time-box"><b id="days">262</b><span>dias</span></div>
+                <div class="time-box"><b id="hours">11</b><span>horas</span></div>
+                <div class="time-box"><b id="minutes">20</b><span>minutos</span></div>
+                <div class="time-box"><b id="seconds">13</b><span>segundos</span></div>
             </div>
         </section>
 
-        <section id="motivos" class="reveal">
+        <section id="motivos" class="reveal visible">
             <div class="section-title">
                 <p class="eyebrow">Gerador de carinho</p>
                 <h2>Um motivo por vez.</h2>
@@ -772,7 +77,7 @@
             </div>
         </section>
 
-        <section id="cartas" class="reveal">
+        <section id="cartas" class="reveal visible">
             <div class="section-title">
                 <p class="eyebrow">Cartas abertas</p>
                 <h2>Capítulos para ela clicar.</h2>
@@ -797,12 +102,12 @@
                 </article>
                 <article class="letter locked" id="lockedLetter">
                     <button type="button">Carta para o futuro <span>+</span></button>
-                    <div class="letter-body" id="lockedBody">Ainda faltam 173 dias para esta carta abrir.</div>
+                    <div class="letter-body" id="lockedBody">Ainda faltam 171 dias para esta carta abrir.</div>
                 </article>
             </div>
         </section>
 
-        <section id="memorias" class="reveal">
+        <section id="memorias" class="reveal visible">
             <div class="section-title">
                 <p class="eyebrow">Galeria</p>
                 <h2>Algumas provas de que valeu a pena.</h2>
@@ -831,7 +136,7 @@
             </div>
         </section>
 
-        <section id="poema" class="reveal">
+        <section id="poema" class="reveal visible">
             <div class="panel">
                 <p class="poem" id="poemText">
                     “Se o mundo pesa, eu penso em você,
@@ -842,7 +147,7 @@
             </div>
         </section>
 
-        <section id="capsula" class="reveal">
+        <section id="capsula" class="reveal visible">
             <div class="section-title">
                 <p class="eyebrow">Cápsula do tempo</p>
                 <h2>Uma mensagem que só abre na hora certa.</h2>
@@ -857,15 +162,15 @@
                         uma mensagem secreta.
                     </p>
                     <div class="capsule-count" id="capsuleCount">
-                        <span class="pill">173 dias</span>
-                        <span class="pill">03 horas</span>
-                        <span class="pill">14 min</span>
+                        <span class="pill">171 dias</span>
+                        <span class="pill">12 horas</span>
+                        <span class="pill">40 min</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="finale reveal">
+        <section class="finale reveal visible">
             <p class="eyebrow">Fim da visita, começo da surpresa</p>
             <p class="signature">Feliz aniversário, meu amor.</p>
         </section>
@@ -877,187 +182,9 @@
         <source src="assets/audio/trilha sonora.mp3" type="audio/mpeg">
     </audio>
 
-    <script>
-        const CONFIG = {
-            startDate: new Date(2025, 9, 17, 0, 0, 0),
-            capsuleDate: new Date(2026, 11, 25, 0, 0, 0),
-            capsuleOpenText: "Se você está lendo isso, é porque chegamos até aqui. Eu ainda escolheria você, com calma, com certeza e com o mesmo sorriso bobo de sempre.",
-            reasons: [
-                "Amo o jeito que seu olho brilha quando você fala do que gosta.",
-                "Amo como você me traz paz sem precisar dizer muito.",
-                "Amo nossas conversas que começam pequenas e viram mundo.",
-                "Amo sua dedicação, seus detalhes e sua forma de cuidar.",
-                "Amo saber que, entre tanta gente, foi você que ficou no meu coração.",
-                "Amo quando qualquer lugar fica melhor só porque você está nele."
-            ]
-        };
-
-        const $ = (selector) => document.querySelector(selector);
-        const $$ = (selector) => Array.from(document.querySelectorAll(selector));
-
-        function pad(value) {
-            return String(value).padStart(2, "0");
-        }
-
-        function updateTimer() {
-            const diff = Math.max(0, Date.now() - CONFIG.startDate.getTime());
-            $("#days").textContent = Math.floor(diff / 86400000);
-            $("#hours").textContent = pad(Math.floor(diff / 3600000) % 24);
-            $("#minutes").textContent = pad(Math.floor(diff / 60000) % 60);
-            $("#seconds").textContent = pad(Math.floor(diff / 1000) % 60);
-        }
-
-        function updateCapsule() {
-            const now = Date.now();
-            const diff = CONFIG.capsuleDate.getTime() - now;
-            const count = $("#capsuleCount");
-
-            if (diff <= 0) {
-                $("#capsuleText").textContent = CONFIG.capsuleOpenText;
-                count.innerHTML = '<span class="pill">Aberta</span>';
-                $("#lockedLetter").classList.remove("locked");
-                $("#lockedBody").textContent = CONFIG.capsuleOpenText;
-                return;
-            }
-
-            const days = Math.floor(diff / 86400000);
-            const hours = Math.floor(diff / 3600000) % 24;
-            const minutes = Math.floor(diff / 60000) % 60;
-            count.innerHTML = `
-        <span class="pill">${days} dias</span>
-        <span class="pill">${pad(hours)} horas</span>
-        <span class="pill">${pad(minutes)} min</span>
-      `;
-            $("#lockedBody").textContent = `Ainda faltam ${days} dias para esta carta abrir.`;
-        }
-
-        function showToast(message) {
-            const toast = $("#toast");
-            toast.textContent = message;
-            toast.classList.add("show");
-            clearTimeout(showToast.timer);
-            showToast.timer = setTimeout(() => toast.classList.remove("show"), 2800);
-        }
-
-        function petals() {
-            for (let i = 0; i < 28; i += 1) {
-                const petal = document.createElement("span");
-                petal.className = "petal";
-                petal.style.left = `${Math.random() * 100}vw`;
-                petal.style.animationDelay = `${Math.random() * 0.9}s`;
-                petal.style.setProperty("--drift", `${Math.random() * 160 - 80}px`);
-                document.body.appendChild(petal);
-                setTimeout(() => petal.remove(), 4700);
-            }
-        }
-
-        function setupLetters() {
-            $$(".letter button").forEach((button) => {
-                button.addEventListener("click", () => {
-                    const letter = button.closest(".letter");
-                    const isLocked = letter.classList.contains("locked");
-
-                    $$(".letter").forEach((item) => {
-                        if (item !== letter) item.classList.remove("open");
-                    });
-
-                    letter.classList.toggle("open");
-                    if (isLocked) showToast("Ela ainda está guardada para o futuro.");
-                });
-            });
-        }
-
-        function setupReason() {
-            let previous = -1;
-            $("#reasonButton").addEventListener("click", () => {
-                let next = previous;
-                while (next === previous) {
-                    next = Math.floor(Math.random() * CONFIG.reasons.length);
-                }
-                previous = next;
-                $("#reasonText").textContent = CONFIG.reasons[next];
-            });
-        }
-
-        function setupTheme() {
-            $("#themeButton").addEventListener("click", () => {
-                const night = document.body.classList.toggle("is-night");
-                $("#themeButton").textContent = night ? "Dia" : "Noite";
-            });
-        }
-
-        function setupMusic() {
-            const audio = $("#soundtrack");
-            const button = $("#musicButton");
-            let playing = false;
-
-            button.addEventListener("click", async () => {
-                if (playing) {
-                    audio.pause();
-                    button.textContent = "Tocar trilha";
-                    playing = false;
-                    return;
-                }
-
-                try {
-                    await audio.play();
-                    button.textContent = "Pausar trilha";
-                    playing = true;
-                } catch (error) {
-                    showToast("Coloque sua música em arquivos/trilha.mp3 para ativar a trilha.");
-                }
-            });
-        }
-
-        function setupReveal() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.16 });
-
-            $$(".reveal").forEach((item) => observer.observe(item));
-        }
-
-        $("#petalButton").addEventListener("click", () => {
-            petals();
-            showToast("Um abraço virtual, daqueles demorados.");
-        });
-
-        setupLetters();
-        setupReason();
-        setupTheme();
-        setupMusic();
-        setupReveal();
-        updateTimer();
-        updateCapsule();
-        setInterval(updateTimer, 1000);
-        setInterval(updateCapsule, 60000);
-
-        // Easter Egg
-        let secretCode = "";
-        const targetCode = "teamo"; // Troque para o que quiser
-
-        window.addEventListener("keydown", (e) => {
-            secretCode += e.key.toLowerCase();
-            if (secretCode.length > targetCode.length) {
-                secretCode = secretCode.slice(1); // Mantém só os últimos caracteres
-            }
-            if (secretCode === targetCode) {
-                petals(); // Dispara as pétalas
-                showToast("Você achou o segredo. Eu te amo muito!");
-                secretCode = ""; // Reseta
-            }
-        });
-    </script>
+    <script src="assets/js/app.js" defer></script>
 
 
 </body>
-<div id="codex-browser-sidebar-comments-root"
-    style="position: fixed; inset: 0px; pointer-events: none; z-index: 2147483647;"></div>
 
 </html>
-
