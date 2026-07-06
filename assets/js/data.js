@@ -165,6 +165,31 @@ const CONFIG = {
         <p>E, de todas as escolhas bonitas que a vida já me permitiu fazer...<br>
         <strong style="color: var(--wine); font-size: 1.2rem;">continuar escolhendo você será sempre a mais fácil.</strong></p>
     `,
+
+    // O SEGREDO ESTAVA AQUI: A lista de frases do Gerador de Carinho!
+    reasons: [
+        "Amo o jeito que seu olho brilha quando você fala do que gosta.",
+        "Amo como você me traz paz sem precisar dizer muito.",
+        "Amo nossas conversas que começam pequenas e viram mundo.",
+        "Amo sua dedicação, seus detalhes e sua forma de cuidar.",
+        "Amo saber que, entre tanta gente, foi você que ficou no meu coração.",
+        "Amo quando qualquer lugar fica melhor só porque você está nele.",
+        "Amo como você transforma dias comuns em momentos especiais.",
+        "Amo como você me faz sentir que tudo vai ficar bem.",
+        "Amo como você me entende mesmo quando eu não consigo me explicar.",
+        "Amo a forma como você sorri, mesmo nos dias difíceis.",
+        "Amo como você me inspira a ser uma pessoa melhor.",
+        "Amo como você me faz sentir que sou importante e amado.",
+        "Amo a forma como você me apoia em todos os momentos.",
+        "Amo como você me faz sentir que posso conquistar qualquer coisa.",
+        "Amo como você me faz sentir que sou a pessoa mais sortuda do mundo.",
+        "Amo como você me faz sentir que sou amado e valorizado.",
+        "Amo o jeito que você me faz rir mesmo nos dias mais difíceis.",
+        "Amo saber que tenho meu porto seguro em você, não importa o que aconteça.",
+        "Amo como você me faz sentir que sou capaz de enfrentar qualquer desafio.",
+        "Amo como você me faz sentir que sou a pessoa mais importante da sua vida."
+    ],
+
     // NOVA SEÇÃO: As 7 músicas da Mixtape
     playlist: [
         { title: "Always Be With You", file: "assets/audio/Always Be With You.mp3" },

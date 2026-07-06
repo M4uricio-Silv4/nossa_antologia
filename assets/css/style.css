@@ -534,7 +534,7 @@ section {
     border-radius: 28px;
     /* Degradê combinando a madeira e o rosa antigo da paleta */
     background:
-        linear-gradient(160deg, rgba(139, 94, 60, 0.85), rgba(232, 180, 184, 0.8)),
+        linear-gradient(160deg, rgba(178, 130, 96, 0.85), rgba(232, 180, 184, 0.8)),
         url("../img/capa-capsula.jpg");
     background-size: cover;
     background-position: center;
@@ -1127,4 +1127,12 @@ body.is-night .pill {
     background: rgba(232, 180, 184, 0.25);
     color: var(--wine);
     font-weight: 600;
+}
+
+/* =========================================
+   CORREÇÃO DE ALTURA PARA CARTAS LONGAS
+   ========================================= */
+.letter.open .letter-body {
+    max-height: 3000px !important;
+    /* Um limite gigante para garantir que nenhum poema seja cortado */
 }

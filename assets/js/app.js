@@ -106,14 +106,33 @@ function setupReason() {
     const reasonBtn = $("#reasonButton");
     if (!reasonBtn) return;
 
-    let previous = -1;
+    // Cria a nossa "sacola" de bilhetes vazia
+    let sacolaDeFrases = [];
+
     reasonBtn.addEventListener("click", () => {
-        let next = previous;
-        while (next === previous) {
-            next = Math.floor(Math.random() * CONFIG.reasons.length);
+
+        // Se a sacola estiver vazia (leu todas as frases), nós recarregamos!
+        if (sacolaDeFrases.length === 0) {
+            // Copia todas as frases do data.js para dentro da sacola
+            sacolaDeFrases = [...CONFIG.reasons];
+
+            // Embaralha as frases muito bem (Algoritmo de Fisher-Yates)
+            for (let i = sacolaDeFrases.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [sacolaDeFrases[i], sacolaDeFrases[j]] = [sacolaDeFrases[j], sacolaDeFrases[i]];
+            }
+
+            // Truque extra: Para não correr o risco da última frase lida 
+            // acabar sendo a primeira da nova sacola embaralhada:
+            const fraseAtual = $("#reasonText").textContent;
+            if (sacolaDeFrases[0] === fraseAtual && sacolaDeFrases.length > 1) {
+                sacolaDeFrases.push(sacolaDeFrases.shift()); // Joga pro fundo da sacola
+            }
         }
-        previous = next;
-        $("#reasonText").textContent = CONFIG.reasons[next];
+
+        // Tira o primeiro "bilhete" da sacola e mostra na tela
+        const fraseSorteada = sacolaDeFrases.shift();
+        $("#reasonText").textContent = fraseSorteada;
     });
 }
 
