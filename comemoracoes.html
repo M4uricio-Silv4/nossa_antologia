@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comemorações - Nossa Antologia</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤍</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <main class="shell">
+
+        <!-- Navegação com botão de voltar -->
+        <nav class="nav" aria-label="Navegação de retorno">
+            <a href="albuns.html">← Voltar para Álbuns</a>
+            <button id="themeButton" type="button">Noite</button>
+        </nav>
+
+        <section class="reveal visible" style="padding-top: 40px; padding-bottom: 80px;">
+            <div class="section-title" style="text-align: center; margin-bottom: 48px;">
+                <p class="eyebrow">Álbum</p>
+                <h2>Comemorações</h2>
+                <p style="margin: 0 auto;">
+                    Momentos especiais, datas comemorativas e celebrações que marcaram nossa história juntos.
+                </p>
+            </div>
+
+            <!-- Grade de Fotos do Álbum -->
+            <div class="photo-grid">
+
+                <!-- Foto 1 -->
+                <figure class="photo-item">
+                    <img src="assets/img/imagem12.jpeg"
+                        alt="Aniversário">
+                    <figcaption>28/12/2025</figcaption>
+                </figure>
+
+                <!-- Foto 2 -->
+                <figure class="photo-item">
+                    <img src="assets/img/imagem7.jpeg"
+                        alt="Motofest">
+                    <figcaption>21/03/2026</figcaption>
+                </figure>
+
+            </div>
+        </section>
+
+        <!-- Modal (Lightbox) para ampliar as fotos -->
+        <div id="lightbox" class="lightbox-overlay">
+            <button class="lightbox-close" aria-label="Fechar">&times;</button>
+            <img src="" alt="Foto ampliada" id="lightbox-img">
+            <p id="lightbox-caption" class="lightbox-caption"></p>
+        </div>
+    </main>
+
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>

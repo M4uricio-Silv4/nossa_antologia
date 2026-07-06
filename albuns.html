@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossos Álbuns - Nossa Antologia</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤍</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Puxando o mesmo CSS da página principal -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <main class="shell">
+
+        <!-- Navegação com botão de voltar -->
+        <nav class="nav" aria-label="Navegação de retorno">
+            <a href="index.html">← Voltar para o Início</a>
+            <button id="themeButton" type="button">Noite</button>
+        </nav>
+
+        <section id="colecoes" class="reveal visible" style="padding-top: 40px;">
+            <div class="section-title" style="text-align: center; margin-bottom: 48px;">
+                <p class="eyebrow">A nossa história em recortes</p>
+                <h2>Nossos Álbuns</h2>
+                <p style="margin: 0 auto;">Escolha uma coleção para reviver os momentos.</p>
+            </div>
+
+            <!-- Grid de Álbuns -->
+            <div class="album-grid">
+
+                <!-- Álbum 1: Por Aí -->
+                <a href="por-ai.html" class="album-card">
+                    <div class="album-cover">
+                        <!-- Substitua o link pela melhor foto de viagem de vocês -->
+                        <img src="assets/img/capa-por_aí.jpg"
+                            alt="Viagens e passeios">
+                    </div>
+                    <div class="album-info">
+                        <h3>Por Aí</h3>
+                        <p>Nossas aventuras e passeios de Xique-Xique Potengi.</p>
+                        <span class="pill">12 fotos</span>
+                    </div>
+                </a>
+
+                <!-- Álbum 2: Nosso Cotidiano -->
+                <a href="cotidiano.html" class="album-card">
+                    <div class="album-cover">
+                        <img src="assets/img/capa-cotidiano.jpg"
+                            alt="Dia a dia">
+                    </div>
+                    <div class="album-info">
+                        <h3>Nosso Cotidiano</h3>
+                        <p>A vida acontecendo nos detalhes. A rotina que a gente escolheu dividir.</p>
+                        <span class="pill">24 fotos</span>
+                    </div>
+                </a>
+
+                <!-- Álbum 3: Comemorações -->
+                <a href="comemoracoes.html" class="album-card">
+                    <div class="album-cover">
+                        <img src="assets/img/capa-comemorações.png"
+                            alt="Datas especiais">
+                    </div>
+                    <div class="album-info">
+                        <h3>Comemorações</h3>
+                        <p>Aniversários, datas nossas e todas as vezes que tivemos um motivo para brindar.</p>
+                        <span class="pill">8 fotos</span>
+                    </div>
+                </a>
+
+                <!-- Álbum 4: Nossas Palhaçadas -->
+                <a href="palhacada.html" class="album-card">
+                    <div class="album-cover">
+                        <img src="assets/img/capa-palhaçadas.jpg"
+                            alt="Momentos engraçados">
+                    </div>
+                    <div class="album-info">
+                        <h3>Nossas Palhaçadas</h3>
+                        <p>Aquela coleção de fotos tremidas e momentos que só a gente entende a graça.</p>
+                        <span class="pill">15 fotos</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
